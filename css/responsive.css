@@ -1,0 +1,123 @@
+/* =========================================================
+   magusCar — responsive.css
+   Adaptação de 1400px até 320px
+   ========================================================= */
+
+/* ---------- ≥ 1400px ---------- */
+@media (min-width: 1400px) {
+  .hero__content { max-width: 860px; }
+  .vitrine-grid { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+}
+
+/* ---------- ≤ 1180px ---------- */
+@media (max-width: 1180px) {
+  .about { grid-template-columns: 1fr; }
+  .about__media { max-width: 620px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact { grid-template-columns: 1fr; }
+  .info-card { max-width: 640px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero__feature { width: clamp(286px, 42.2vw, 435px); max-width: min(46vw, 100% - 3rem); }
+}
+
+@media (max-width: 1080px) {
+  .header-phone { display: none; }
+  .filters__row { grid-template-columns: 1fr 1fr; }
+  .hero__scroll { display: none; }
+}
+
+/* ---------- ≤ 900px — vira menu hambúrguer ---------- */
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .nav-toggle { display: grid; }
+  .header-actions .header-phone { display: inline-flex; }
+  .hero { min-height: auto; padding-block: 3rem 3.5rem; }
+  .hero__content { max-width: none; }
+  .hero__bg { background-position: 62% center; }
+
+  /* Polo volta ao fluxo normal, abaixo do texto */
+  .hero { flex-direction: column; align-items: stretch; }
+  .hero__feature {
+    position: static;
+    display: block;
+    width: min(100%, 420px);
+    max-width: none;
+    margin: 1.5rem auto 0;
+  }
+}
+
+@media (max-width: 720px) {
+  :root { --chrome-h: 104px; }
+  .topbar { min-height: 34px; font-size: 0.64rem; letter-spacing: 0.1em; }
+  .header { min-height: 64px; }
+  .logo { font-size: 1.42rem; }
+  .logo__mark { width: 34px; height: 34px; font-size: 1.1rem; }
+  .logo__sub { display: none; }
+  .header-actions .header-phone { display: none; }
+
+  .hero__title { font-size: clamp(2.5rem, 11vw, 4rem); }
+  .hero__actions .btn { flex: 1 1 auto; }
+  .hero__stats { gap: 1.2rem 2rem; }
+
+  .filters { position: static; }
+  .filters__row { grid-template-columns: 1fr; }
+  .filters__bar { flex-direction: column; align-items: flex-start; }
+
+  .steps { grid-template-columns: 1fr; }
+  .vitrine-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+  .vehicle-card__specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vehicle-card__foot { flex-direction: column; align-items: stretch; }
+  .card-open { justify-content: center; }
+
+  .form-grid { grid-template-columns: 1fr; }
+  .about__media { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 560px) {
+  .numbers { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .number-card { padding: 1.1rem 0.9rem; }
+  .about__media { grid-template-columns: 1fr; }
+  .about__media figure:first-child { grid-row: auto; }
+  .about__media figure:first-child img { aspect-ratio: 16 / 10; }
+  .about__badge { right: 0.8rem; bottom: 0.8rem; }
+  .destaque { min-height: 300px; }
+  .modal__dialog { max-height: 92vh; }
+}
+
+@media (max-width: 420px) {
+  :root { --gutter: 1.05rem; }
+  .vitrine-grid { grid-template-columns: 1fr; }
+  .vehicle-card__specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero__stats { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .hero__feature { width: min(100%, 340px); margin-top: 1.15rem; }
+  .chip { padding: 0.42rem 0.8rem; font-size: 0.7rem; }
+  .cta__actions .btn { width: 100%; }
+  .to-top { width: 44px; height: 44px; }
+}
+
+@media (max-width: 360px) {
+  .vehicle-card__specs { grid-template-columns: 1fr; }
+  .numbers { grid-template-columns: 1fr; }
+  .hero__badge { font-size: 0.62rem; letter-spacing: 0.14em; }
+  .hero__feature { width: min(100%, 290px); margin-top: 1rem; }
+}
+
+/* ---------- Paisagem baixa ---------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: 480px; }
+  .drawer { padding-block: 1.1rem; }
+  .drawer__link { padding-block: 0.6rem; font-size: 1.05rem; }
+}
+
+/* ---------- Ponteiro grosso (toque) ---------- */
+@media (hover: none) {
+  .vehicle-card:hover,
+  .service:hover,
+  .destaque:hover,
+  .testimonial:hover { transform: none; }
+  .btn:hover, .card-open:hover, .chip:hover, .header-phone:hover { transform: none; }
+}
